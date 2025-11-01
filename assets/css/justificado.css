@@ -1,0 +1,99 @@
+/* ====== JUSTIFICACIÓN DE TEXTO - VERSIÓN REFORZADA ====== */
+
+/* Justificar SIEMPRE en áreas de contenido principal */
+main p,
+main li,
+main dd,
+main blockquote,
+main figcaption,
+.page p,
+.page li,
+.content p,
+.content li,
+.contenido p,
+.contenido li,
+.article p,
+.article li,
+.articulo p,
+.articulo li,
+.post p,
+.post li,
+.markdown p,
+.markdown li,
+.prosa p,
+.prosa li,
+.texto p,
+.texto li,
+.body p,
+.body li,
+.card p,
+.card li,
+.card-body p,
+.card-body li,
+.rich-content p,
+.rich-content li,
+.panel.main p,
+.panel.main li,
+#content p,
+#content li {
+  text-align: justify !important;
+  text-align-last: left !important;
+  text-wrap: pretty;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  line-height: 1.75;
+}
+
+/* Listas específicas */
+ul li,
+ol li,
+.list-compact li {
+  text-align: justify !important;
+}
+
+/* Títulos con balance (NO justificados) */
+h1, h2, h3, h4, h5, h6,
+.card h3,
+#title {
+  text-wrap: balance;
+  text-align: left !important;
+}
+
+/* Lead paragraphs */
+.lead {
+  text-align: justify !important;
+  line-height: 1.8;
+}
+
+/* NUNCA justificar estos elementos */
+nav,
+nav *,
+.nav,
+.nav *,
+.sidebar,
+.sidebar *,
+button,
+a.btn,
+.btn,
+code,
+pre,
+kbd,
+samp,
+table,
+th,
+td,
+input,
+textarea,
+select,
+label,
+.badge,
+.badge-tag {
+  text-align: initial !important;
+}
+
+/* Ajustes finales */
+.card-body p,
+.panel.main p {
+  margin-bottom: 0.75rem;
+}

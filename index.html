@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portal Cáncer Gástrico</title>
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/justificado.css">
+<link rel="stylesheet" href="assets/css/ui-kit.css">
+</head>
+<body>
+<div class="bg"></div>
+
+<!-- ====== SVG ICON SPRITE ====== -->
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10l9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10z"/></symbol>
+  <symbol id="i-risk" viewBox="0 0 24 24"><path d="M12 2l10 6v8l-10 6L2 16V8l10-6zm0 2.3L4 8v8l8 4.7L20 16V8l-8-3.7zM11 8h2v4h-2V8zm0 6h2v2h-2v-2z"/></symbol>
+  <symbol id="i-scope" viewBox="0 0 24 24"><path d="M12 2a1 1 0 011 1v2a7 7 0 016 6h2a1 1 0 110 2h-2a7 7 0 01-6 6v2a1 1 0 11-2 0v-2a7 7 0 01-6-6H3a1 1 0 110-2h2a7 7 0 016-6V3a1 1 0 011-1z"/></symbol>
+  <symbol id="i-therapy" viewBox="0 0 24 24"><path d="M7 11h10v2H7zM5 7h14v2H5zM9 15h6v2H9z"/></symbol>
+  <symbol id="i-prevent" viewBox="0 0 24 24"><path d="M12 2a8 8 0 018 8c0 5-8 12-8 12S4 15 4 10a8 8 0 018-8zm0 4a4 4 0 100 8 4 4 0 000-8z"/></symbol>
+  <symbol id="i-books" viewBox="0 0 24 24"><path d="M6 2h5a2 2 0 012 2v16a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2zm7 0h5a2 2 0 012 2v14a2 2 0 01-2 2h-5"/></symbol>
+  <symbol id="i-quiz" viewBox="0 0 24 24"><path d="M12 2a7 7 0 017 7c0 3-2 4.5-3.5 5.5S14 16 14 17v1h-4v-1c0-2 1.5-3.5 3.2-4.6C14.9 11.3 16 10.6 16 9a4 4 0 00-8 0H6a6 6 0 0112 0 6 6 0 01-3 5.2 8 8 0 00-1 .8H10"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v10m0 0l3-3m-3 3l-3-3M4 14v5h16v-5"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 4l14 8-14 8V4z"/></symbol>
+</svg>
+
+<header class="header">
+  <div class="top">
+    <div class="brand">
+      <img src="assets/img/unimar-logo.png" alt="Universidad Mariana" class="logo-um">
+    </div>
+    <nav id="nav" class="nav"></nav>
+  </div>
+  <div class="search">
+    <input id="q" placeholder="Buscar en el portal..." aria-label="Buscar">
+    <button id="btnSearch">Buscar</button>
+  </div>
+</header>
+
+<!-- ====== HERO ====== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <h1>Cáncer Gástrico</h1>
+    </div>
+
+    <div class="hero-media">
+      <div class="carousel" id="carHero">
+        <div class="slides">
+          
+          <div class="slide active">
+            <img src="./assets/img/tc_posicionamiento-1600(1).jpg" 
+                 alt="TC: posicionamiento del paciente"
+                 loading="eager">
+          </div>
+
+          <div class="slide">
+            <img src="./assets/img/tc_posicionamiento-1600(1).jpg" 
+                 alt="Imagen 2"
+                 loading="lazy">
+          </div>
+
+          <div class="slide">
+            <img src="./assets/img/tc_posicionamiento-1600(1).jpg" 
+                 alt="Imagen 3"
+                 loading="lazy">
+          </div>
+
+        </div>
+        <button class="c-prev" aria-label="Anterior">‹</button>
+        <button class="c-next" aria-label="Siguiente">›</button>
+        <div class="c-dots"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<main class="wrap">
+  <aside class="panel side"><h3>Índice</h3><div id="side" class="menu"></div></aside>
+  <section class="panel main">
+    <h2 id="title" style="margin:0 0 8px">Inicio</h2>
+    <div id="content"></div>
+
+    <!-- ====== Bloque multimedia (visible en sección “Galería”) ====== -->
+    <div id="multimedia" style="display:none; margin-top:12px">
+      <div class="cards">
+        <div class="card full">
+          <h3><svg class="ico"><use xlink:href="#i-play"/></svg> Videos destacados</h3>
+          <div class="video-grid">
+            <div class="video"><iframe src="https://www.youtube.com/embed/yJXTXN4xrI8" title="Prevención y factores de riesgo" allowfullscreen></iframe></div>
+            <div class="video"><iframe src="https://www.youtube.com/embed/u1zgFlCw8Aw" title="Diagnóstico endoscópico" allowfullscreen></iframe></div>
+            <div class="video"><iframe src="https://www.youtube.com/embed/lTTajzrSkCw" title="Tratamiento multimodal" allowfullscreen></iframe></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Bloque multimedia -->
+  </section>
+</main>
+
+<div class="footer">
+  © Universidad Mariana — Portal Cáncer Gástrico.<br>
+  <strong>Tecnología en Radiodiagnóstico y Radioterapia</strong><br>
+  Integrantes: Reichel Otero Cadena, Elizabeth Benavides, Jhon Pantoja.
+</div>
+<!-- === Librería de gráficos === -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+
+<script src="assets/js/legacy/app-legacy.js" defer></script>
+
+<script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,467 @@
+/* ====== THEME Universidad Mariana (aprox) ====== */
+:root{
+  --uni-blue-900:#072B61;
+  --uni-blue-800:#0A3D91;
+  --uni-blue-700:#154da3;
+  --uni-blue-600:#1E5FBF;
+  --uni-blue-500:#2C79E6;
+  --uni-blue-100:#E8F1FF;
+  --uni-cyan:#00A3E0;
+  --uni-ink:#0f172a;
+  --uni-ink-2:#334155;
+  --uni-line:#dbe3f1;
+  --surface:#ffffff;
+  --surface-2:rgba(255,255,255,.92);
+  --focus:#66b2ff;
+
+  --bg-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgWQogO3g9g7aYTWLhpvkP8kyA3ID4SZlTF2OG5ZKlaAIUsOz9lgaCcriXyLT_UDUT_oQBoeBxnVnyoIs8xbLTHoTKVRIzyVjPfW1gxVs2oUVHlF-mCxB8YMqAo1XnOmWC9ZLjG5QtDYn0/s1600/NOMBR%2BY%2BATURALEZA%2BJURIDICA%252B.png");
+}
+
+/* ====== Reset + base ====== */
+*{box-sizing:border-box}
+html,body{height:100%}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--uni-blue-100);
+  color:var(--uni-ink);
+  font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+}
+
+/* ====== Fondo global con overlay ====== */
+.bg{
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(to bottom, rgba(9,22,44,.55), rgba(9,22,44,.65)),
+    url("../img/hero-bg.jpg") center/cover no-repeat;
+  filter: none;
+}
+
+/* ====== Header / Topbar ====== */
+.header{
+  position:sticky; top:0; z-index:100;
+  backdrop-filter:saturate(1.15) blur(8px);
+  background:rgba(7,43,97,.78);
+  border-bottom:1px solid rgba(255,255,255,.2);
+  color:#fff;
+}
+.header .top{
+  width:min(1400px,96vw); 
+  margin:0 auto; 
+  padding:12px 20px;
+  display:flex; 
+  align-items:center; 
+  justify-content:space-between;  /* SEPARA logo (izq) y nav (der) */
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.brand{ 
+  font-weight:800; 
+  letter-spacing:.2px; 
+  display:flex; 
+  align-items:center;
+}
+
+.brand .logo-um{ 
+  height:75px;                        /* MÁS GRANDE */
+  width:auto;
+  filter:brightness(0) invert(1);     /* BLANCO */
+}
+
+/* Media query para pantallas grandes */
+@media (min-width:1100px){ 
+  .brand .logo-um{ height:90px; }     /* AÚN MÁS GRANDE en desktop */
+}
+
+.brand .logo{ width:28px; height:28px; display:inline-block }
+.badge{
+  background:rgba(255,255,255,.16); 
+  padding:4px 10px; 
+  border-radius:999px;
+  font-size:12px; 
+  font-weight:700; 
+  border:1px solid rgba(255,255,255,.22)
+}
+.nav{ 
+  display:flex; 
+  gap:2px;
+  align-items:center;
+  flex-shrink:0;
+}
+.nav .tab{
+  display:inline-flex; 
+  align-items:center; 
+  gap:5px;
+  padding:8px 11px;
+  border-radius:10px;
+  text-decoration:none; 
+  color:#e9f1ff; 
+  font-weight:700; 
+  font-size:0.88rem;
+  transition:.2s;
+  border:1px solid transparent;
+  white-space:nowrap;
+  flex-shrink:0;
+}
+.nav .tab .ico{ width:15px; height:15px; opacity:.9 }
+.nav .tab:hover{ 
+  background:rgba(255,255,255,.14); 
+  border-color:rgba(255,255,255,.18) 
+}
+.nav .tab.active{
+  background:#fff; 
+  color:var(--uni-blue-800); 
+  border-color:#fff;
+  box-shadow:0 1px 0 rgba(0,0,0,.06);
+}
+
+/* ====== Buscador ====== */
+.header .search{
+  width:min(1400px,96vw); margin:0 auto; padding:8px 20px 16px;
+  display:flex; gap:10px;
+}
+#q{
+  flex:1; border-radius:999px; border:1px solid rgba(255,255,255,.45);
+  background:rgba(255,255,255,.98); padding:11px 16px; outline:none;
+  font-size:16px;
+}
+#q:focus{ border-color:var(--focus); box-shadow:0 0 0 3px rgba(102,178,255,.35) }
+#btnSearch{
+  border:0; border-radius:999px; padding:11px 18px; cursor:pointer; font-weight:800;
+  background:linear-gradient(180deg, var(--uni-blue-600), var(--uni-blue-800)); color:#fff;
+  box-shadow:0 6px 18px rgba(10,61,145,.25);
+}
+#btnSearch:hover{ filter:brightness(1.05) }
+
+/* ====== HERO (full ancho) ====== */
+.hero{
+  width:min(1400px,96vw); margin:20px auto 10px;
+  background:linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.92));
+  border:1px solid var(--uni-line); border-radius:16px;
+  box-shadow:0 18px 40px rgba(7,43,97,.12);
+  overflow:hidden;
+}
+.hero-inner{
+  display:grid;
+  grid-template-columns:1fr;
+  grid-template-rows:auto 1fr;
+  padding:0;
+}
+.hero-copy{ padding:22px 22px 8px; }
+.hero h1{ margin:0 0 6px; font-size:34px; line-height:1.2; color:var(--uni-blue-900) }
+.hero p{ margin:0 0 14px; color:var(--uni-ink-2) }
+.hero .hero-actions{ margin-top:8px }
+
+/* ====== CARRUSEL DEL HERO - Altura ajustada ====== */
+#carHero{ 
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 0 0 16px 16px;
+}
+
+@media (max-width:1080px){ 
+  #carHero{ height: 450px; } 
+}
+
+@media (max-width:640px){ 
+  #carHero{ height: 350px; } 
+}
+
+#carHero .slides{ 
+  position: absolute;
+  inset: 0;
+}
+
+#carHero .slide{ 
+  position: absolute;
+  inset: 0;
+  opacity: 0; 
+  transition: opacity .5s ease;
+}
+
+#carHero .slide.active{ 
+  opacity: 1; 
+}
+
+#carHero .slide img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+#carHero .c-prev, #carHero .c-next{
+  position: absolute; 
+  top: 50%; 
+  transform: translateY(-50%);
+  width: 44px; 
+  height: 44px; 
+  border-radius: 50%; 
+  border: 0; 
+  cursor: pointer;
+  background: rgba(255,255,255,.88); 
+  box-shadow: 0 6px 14px rgba(0,0,0,.25);
+  z-index: 10;
+}
+
+#carHero .c-prev{ left: 14px; } 
+#carHero .c-next{ right: 14px; }
+#carHero .c-prev:hover, #carHero .c-next:hover{ filter: brightness(1.05); }
+
+#carHero .c-dots{
+  position: absolute; 
+  left: 0; 
+  right: 0; 
+  bottom: 10px; 
+  display: flex; 
+  gap: 8px; 
+  justify-content: center; 
+  z-index: 10;
+}
+
+#carHero .c-dots .c-dot{
+  width: 10px; 
+  height: 10px; 
+  border-radius: 999px; 
+  background: rgba(255,255,255,.6); 
+  border: 1px solid rgba(0,0,0,.2);
+  cursor: pointer;
+}
+
+#carHero .c-dots .c-dot.active{ background: #fff; }
+
+/* ====== Carousel (widget genérico, otras secciones) ====== */
+.section-full{ width:min(1400px,96vw); margin:12px auto 18px }
+.carousel{
+  position:relative; height:420px; border-radius:16px; overflow:hidden;
+  border:1px solid var(--uni-line); background:#000;
+  box-shadow:0 16px 36px rgba(7,43,97,.14);
+}
+.carousel .slides{ position:absolute; inset:0 }
+.carousel .slide{ position:absolute; inset:0; opacity:0; transition:opacity .6s ease; }
+.carousel .slide.active{ opacity:1 }
+.carousel img{ width:100%; height:100%; object-fit:cover }
+.c-prev,.c-next{
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:44px; height:44px; border-radius:50%; border:0; cursor:pointer;
+  background:rgba(255,255,255,.88); box-shadow:0 6px 14px rgba(0,0,0,.25);
+  font-size:22px; line-height:44px;
+}
+.c-prev{ left:14px } .c-next{ right:14px }
+.c-prev:hover,.c-next:hover{ filter:brightness(1.05) }
+.c-dots{
+  position:absolute; left:0; right:0; bottom:10px; display:flex; gap:8px; justify-content:center
+}
+.c-dot{
+  width:10px; height:10px; border-radius:999px; background:rgba(255,255,255,.6); border:1px solid rgba(0,0,0,.2);
+  cursor:pointer
+}
+.c-dot.active{ background:#fff }
+
+/* ====== Layout principal ====== */
+.wrap{
+  width:min(1400px,96vw); margin:10px auto 36px; padding:0;
+  display:grid; grid-template-columns:320px 1fr; gap:18px;
+}
+.panel{
+  background:var(--surface-2); border:1px solid var(--uni-line);
+  border-radius:16px; box-shadow:0 10px 28px rgba(7,43,97,.12);
+}
+.panel.main{ padding:22px }
+.panel.side{ padding:16px; position:sticky; top:110px; max-height:calc(100vh - 130px); overflow:auto }
+
+/* ====== Menú lateral ====== */
+.panel.side h3{ margin:4px 0 12px; color:var(--uni-blue-900) }
+.menu a{
+  display:flex; align-items:center; gap:8px; padding:11px 12px; border-radius:12px;
+  color:var(--uni-ink-2); text-decoration:none; border:1px solid transparent; font-weight:600;
+}
+.menu a .ico{ width:16px; height:16px; opacity:.8 }
+.menu a:hover{ background:#fff; border-color:var(--uni-line) }
+.menu a.active{
+  background:linear-gradient(180deg,#fff,#f9fbff);
+  border-color:var(--uni-line); color:var(--uni-blue-800); font-weight:800;
+  box-shadow:0 1px 0 rgba(0,0,0,.04);
+}
+
+/* ====== Títulos y tipografía ====== */
+#title{ color:var(--uni-blue-900); font-size:26px; margin-top:4px }
+.card h3{ color:var(--uni-blue-800); font-size:20px }
+.lead{ color:#0f172a; font-size:16px }
+
+/* ====== Cards ====== */
+.cards{ display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)) }
+.card{
+  background:#fff; border:1px solid var(--uni-line);
+  border-radius:14px; padding:16px; box-shadow:0 8px 20px rgba(7,43,97,.08);
+}
+.card.full{ grid-column:1 / -1 }
+
+/* ====== Botones ====== */
+.btn-row{ display:flex; gap:10px; flex-wrap:wrap; margin-top:8px }
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:10px 14px; border-radius:12px; text-decoration:none; font-weight:800;
+  border:1px solid var(--uni-line); color:var(--uni-blue-800);
+  background:linear-gradient(180deg,#fff,#f9fbff);
+}
+.btn .ico{ width:18px; height:18px }
+.btn:hover{ filter:brightness(1.02) }
+.btn.primary{
+  background:linear-gradient(180deg, var(--uni-blue-600), var(--uni-blue-800));
+  border-color:transparent; color:#fff; box-shadow:0 8px 18px rgba(10,61,145,.25)
+}
+.btn.primary:hover{ filter:brightness(1.05) }
+
+/* ====== Quiz ====== */
+.question{ margin:10px 0 6px; font-weight:800; color:var(--uni-blue-900) }
+.option{
+  display:block; padding:8px 10px; margin-bottom:6px; border-radius:10px; background:#f8fbff;
+  border:1px solid var(--uni-line)
+}
+.option input{ margin-right:6px }
+
+/* ====== Videos ====== */
+.video-grid{
+  display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+}
+.video{
+  position:relative; padding-top:56.25%; border-radius:12px; overflow:hidden; background:#000; border:1px solid var(--uni-line)
+}
+.video iframe{ position:absolute; inset:0; width:100%; height:100% }
+
+/* ====== Dashboard (Estadificación) ====== */
+.dash-controls{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:4px 0 10px}
+.dash-controls select,.dash-controls input[type="range"]{padding:8px 10px; border:1px solid var(--uni-line); border-radius:10px; background:#fff}
+.dash-controls label{font-weight:700; color:var(--uni-blue-900); margin-right:4px}
+.chart-box{background:#fff; border:1px solid var(--uni-line); border-radius:14px; padding:12px; box-shadow:0 8px 20px rgba(7,43,97,.08)}
+.chart-actions{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px}
+.chart-actions .btn{padding:8px 12px; font-weight:700}
+
+/* ====== Footer ====== */
+.footer{
+  width:min(1400px,96vw); margin:24px auto 40px; text-align:center; color:#eef3ff; text-shadow:0 1px 0 rgba(0,0,0,.2);
+}
+
+/* ====== Responsivo ====== */
+@media (max-width:1080px){
+  .hero-inner{ grid-template-columns:1fr }
+  .carousel{ height:340px }
+  .wrap{ grid-template-columns:1fr }
+  .panel.side{ position:static; max-height:none }
+}
+@media (min-width:1400px){
+  html{ font-size:18px }
+}
+
+/* ==== Helpers de layout para "Factores de riesgo" ==== */
+.cards-2{display:grid;gap:14px;grid-template-columns:repeat(2,minmax(300px,1fr))}
+.cards-3{display:grid;gap:14px;grid-template-columns:repeat(3,minmax(260px,1fr))}
+@media (max-width:1080px){.cards-2,.cards-3{grid-template-columns:1fr}}
+
+.card.equal{display:flex;flex-direction:column}
+.card.equal .btn-row,.card.equal .foot{margin-top:auto}
+
+.media-16x9>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+.list-compact{margin:0;padding-left:18px}
+.list-compact li{margin:4px 0}
+
+.badge-tag{display:inline-block;padding:3px 8px;border-radius:999px;font-weight:700;font-size:12px;background:#eef3ff;border:1px solid var(--uni-line);color:var(--uni-blue-800)}
+
+/* Distribuciones más limpias para contenido denso */
+.cards.cols-2{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
+.cards.cols-3{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.tbl-wrap{overflow:auto;margin-top:8px}
+.tbl{width:100%;border-collapse:collapse;font-size:14px}
+.tbl th,.tbl td{border:1px solid var(--uni-line);padding:6px 8px;text-align:left}
+.tbl thead th{background:#f6f9ff;color:#0f172a}
+
+/* === Tamaños compactos para el hero e imágenes === */
+.hero-simple{
+  position: relative;
+  height: 220px;
+}
+@media (min-width: 1100px){ .hero-simple{ height: 240px; } }
+@media (max-width: 640px) { .hero-simple{ height: 190px; } }
+
+.hero-simple .hero-bg{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(.45) saturate(.9);
+}
+.hero-simple .hero-inner{
+  height:100%;
+  max-width:1200px; margin:0 auto;
+  padding:0 16px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.hero-simple h1{ font-size:22px; margin:0; }
+.hero-simple .lead{ font-size:14px; margin:4px 0 8px; }
+.logo-um{ height: 32px; width:auto; }
+.header .top .logo-um { height: 52px; width: auto; }
+
+/* ===============================
+   Carrusel de Inicio (#carCampus)
+   — llenar horizontal (cover)
+   =============================== */
+#carCampus{
+  height: 360px;
+}
+@media (max-width:1080px){ #carCampus{ height: 280px; } }
+@media (max-width:640px) { #carCampus{ height: 210px; } }
+#carCampus .slide img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+}
+#carCampus .slides{ background: transparent; }
+
+/* En el hero: por defecto cover (ya lo tienes) */
+/* Si una imagen debe verse completa (p. ej., la del tomógrafo), usa .contain */
+#carHero .slide img.contain{
+  object-fit: contain;
+  background: #000;
+}
+
+/* Performance: la primera imagen debe cargar sin lazy */
+#carHero .slide:first-child img{
+  loading: auto;
+}
+
+/* Marco 16:9 del carrusel */
+.media-16x9{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f6f7fb;
+}
+
+/* La imagen ocupa el marco completo, sin deformarse */
+.media-16x9 > img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Si quieres ver la imagen completa (sin recorte), cambia la clase a .fit-contain en el HTML */
+.media-16x9 > img.fit-contain{
+  object-fit: contain;
+  background: #fff;
+}
