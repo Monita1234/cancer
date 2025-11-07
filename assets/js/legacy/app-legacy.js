@@ -4,67 +4,43 @@
 var DATA = {
   inicio: {
     titulo: "Inicio",
-  html:
-    // HERO simple
-    '<div class="cards"><div class="card full" style="background:#0f172a;color:#fff;border:none">' +
-      '<h2 style="margin:0 0 6px 0">Cáncer gástrico: lo esencial en un vistazo</h2>' +
-      '<p style="opacity:.95;margin:0">Resumen claro para empezar: qué es, cómo prevenir, cómo detectar temprano y cómo se trata hoy.</p>' +
-    '</div></div>' +
-
-    // FILA 1: ¿Qué es? + Prevención
-    '<div class="cards-2">' +
-
-      '<div class="card equal">' +
-        '<h3>¿Qué es?</h3>' +
-        '<div class="media-16x9">' +
-'<img src="https://www.tudrgastro.com/wp-content/uploads/2022/07/apendicitis-aguda.jpg" alt="Anatomía del estómago">' +
-        '</div>' +
-        '<p class="lead">La mayoría son <b>adenocarcinomas</b>. Evolución típica (cascada de Correa): gastritis crónica → atrofia → metaplasia intestinal → displasia → cáncer.</p>' +
-      '</div>' +
-
-      '<div class="card equal">' +
-        '<h3>Prevención esencial</h3>' +
-        '<div class="media-16x9">' +
-          '<img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Hpylori.jpg" alt="Helicobacter pylori (micrografía CDC)">' +
-        '</div>' +
-        '<ul class="list-compact">' +
-          '<li><b>Erradicar <i>H. pylori</i></b> (carcinógeno grupo I).</li>' +
-          '<li>Menos <b>sal/ahumados/procesados</b>; más frutas y verduras.</li>' +
-          '<li><b>No fumar</b> y alcohol con moderación.</li>' +
-        '</ul>' +
-      '</div>' +
-
-    '</div>' +
-
-    // FILA 2: Detección + Tratamiento
-    '<div class="cards-2">' +
-
-      '<div class="card equal">' +
-        '<h3>Detección temprana</h3>' +
-        '<div class="media-16x9">' +
-'<img src="https://i.ytimg.com/vi/zvxGykqg9so/maxresdefault.jpg" alt="Helicobacter pylori (micrografía)">' +
-        '</div>' +
-        '<ul class="list-compact">' +
-          '<li><b>Endoscopia + biopsias</b>: estándar de oro.</li>' +
-          '<li>Imagen avanzada (NBI/BLI) ayuda a caracterizar lesiones sutiles.</li>' +
-          '<li>Pepsinógenos séricos pueden <b>priorizar quién</b> debe endoscopiarse.</li>' +
-        '</ul>' +
-      '</div>' +
-
-      '<div class="card equal">' +
-        '<h3>Tratamiento, en breve</h3>' +
-        '<ul class="list-compact">' +
-          '<li><b>Temprano (T1 mucosa/submucosa):</b> resección endoscópica (EMR/ESD) si cumple criterios.</li>' +
-          '<li><b>Resecable II–III:</b> quimioterapia <b>FLOT</b> perioperatoria + gastrectomía con <b>D2</b>.</li>' +
-          '<li><b>Avanzado:</b> doblete platino–fluoropirimidina ± <b>trastuzumab</b> (HER2+) ± <b>anti-PD-1</b> según biomarcadores.</li>' +
-        '</ul>' +
-      '</div>' +
-
-    '</div>' 
-},
-
-
-
+    html:
+      '<div class="intro-gallery intro-gallery--full">' +
+      
+      // 1. Anatomía del estómago
+      '<figure class="intro-gallery__tile" role="img" aria-label="Equipo en cirugia laparoscopica" ' +
+      'style="--img:url(https://static.todamateria.com.br/upload/es/ta/esta_mago1.jpg)"></figure>' +
+      
+      // 2. Imagen 2
+      '<figure class="intro-gallery__tile" role="img" aria-label="Planeacion multidisciplinaria" ' +
+      'style="--img:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQks8at0vkFh6yL_goFVo4VGbP0PLUHsxf92A&s)"></figure>' +
+      
+      // 3. Imagen 3
+      '<figure class="intro-gallery__tile" role="img" aria-label="Revision endoscopica" ' +
+      'style="--img:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiUW-1_53y8hkNmpVqg2zIKT0E1NcCQx9yaw&s)"></figure>' +
+      
+      // 4. Imagen 4
+      '<figure class="intro-gallery__tile" role="img" aria-label="Acompanamiento al paciente" ' +
+      'style="--img:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTr27qoK_aAlZnnk176pAlmJfkCfhnwTS0ng&s)"></figure>' +
+      
+      // 5. Imagen 5
+      '<figure class="intro-gallery__tile" role="img" aria-label="Formacion academica" ' +
+      'style="--img:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdpxUGVFbGvmChDO83Up05fpKXkh4JbXLA1Q&s)"></figure>' +
+      
+      // 6. Imagen 6
+      '<figure class="intro-gallery__tile" role="img" aria-label="Apoyo nutricional" ' +
+      'style="--img:url(https://twnlivestorage1.blob.core.windows.net/twn-media-public/VMPRG55776B/VMPRG55776B_g00.jpg)"></figure>' +
+      
+      // 7. Imagen 7
+      '<figure class="intro-gallery__tile" role="img" aria-label="Resultados de imagen" ' +
+      'style="--img:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-APDQtveDq6OCLrGf86IryZHv8O8WX7FGfg&s)"></figure>' +
+      
+      // 8. Imagen adicional (repitiendo la primera para completar)
+      '<figure class="intro-gallery__tile" role="img" aria-label="Trabajo clinico conjunto" ' +
+      'style="--img:url(https://static.todamateria.com.br/upload/es/ta/esta_mago1.jpg)"></figure>' +
+      
+      '</div>'
+  },
 anatomia: {
   titulo: "Anatomía y fisiología del estómago",
   html:
@@ -1497,17 +1473,12 @@ impacto: {
 tesis: {
   titulo: "Tesis",
   html:
-    
+    '<div class="cards"><div class="card full">' +
+      '<p class="lead">Consulta y descarga los trabajos finales y proyectos relacionados con cáncer gástrico.</p>' +
     '</div></div>' +
-    '<div class="cards" id="tesisGrid"></div>'
+    '<div class="cards cols-3" id="tesisGrid"></div>'
 },
 
-
-  galeria: {
-    titulo: "Galería multimedia",
-    html:
-      '<div class="cards"><div class="card full"><p class="lead">Imágenes del campus y videos destacados. Explora el carrusel superior y esta selección de videos.</p></div></div>'
-  },
 
   quiz: {
     titulo: "Quiz de repaso",
@@ -1534,68 +1505,291 @@ var QUIZ = [
   {q:"Antiangiogénico en 2ª línea con paclitaxel:",opts:["Imatinib","Ramucirumab","Osimertinib","Bevacizumab intravítreo"],ans:1}
 ];
 
-/* ====== RENDER / NAV / SIDE ====== */
+var SECTION_META = {
+  anatomia: { label: "Anatomia y fisiologia", icon: "i-scope" },
+  factores: { label: "Factores de riesgo", icon: "i-risk" },
+  diagnostico: { label: "Metodos diagnosticos", icon: "i-scope" },
+  estadificacion: { label: "Estadificacion", icon: "i-scope" },
+  tratamiento: { label: "Tratamientos", icon: "i-therapy" },
+  prevencion: { label: "Prevencion", icon: "i-prevent" },
+  impacto: { label: "Impacto en salud publica", icon: "i-books" }
+};
+var SECTION_KEYS = Object.keys(SECTION_META);
+
+// Personaliza la lista de PDF por seccion (archivos dentro de assets/infogramas)
+var INFOGRAMAS = {
+  anatomia: [
+    { file: "atlas-macroscopico.pdf", title: "Atlas macroscopico" },
+    { file: "histologia-fundica.pdf", title: "Histologia fundica" },
+    { file: "vascularizacion-gastrica.pdf", title: "Vascularizacion gastrica" },
+    { file: "motilidad-gastrica.pdf", title: "Ciclos de motilidad" }
+  ],
+  factores: [
+    { file: "factores-modificables.pdf", title: "Factores modificables" },
+    { file: "factores-no-modificables.pdf", title: "Factores no modificables" },
+    { file: "h-pylori-riesgo.pdf", title: "H. pylori y riesgo" },
+    { file: "dieta-saludable.pdf", title: "Recomendaciones dietarias" }
+  ],
+  diagnostico: [
+    { file: "endoscopia-calidad.pdf", title: "Checklist EDA" },
+    { file: "clasificacion-paris.pdf", title: "Clasificacion de Paris" },
+    { file: "biopsias-sydney.pdf", title: "Protocolo Sydney" },
+    { file: "estadificacion-imagen.pdf", title: "Ruta imagenologica" }
+  ],
+  estadificacion: [
+    { file: "tnm-gastrico.pdf", title: "Resumen TNM 8a ed." },
+    { file: "estaciones-ganglionares.pdf", title: "Estaciones ganglionares" },
+    { file: "algoritmo-estadificacion.pdf", title: "Algoritmo de estadificacion" }
+  ],
+  tratamiento: [
+    { file: "algoritmo-terapeutico.pdf", title: "Algoritmo terapeutico" },
+    { file: "esquemas-perioperatorios.pdf", title: "Esquemas perioperatorios" },
+    { file: "criterios-esd.pdf", title: "Criterios para ESD" },
+    { file: "cuidados-nutricionales.pdf", title: "Soporte nutricional" }
+  ],
+  prevencion: [
+    { file: "tamizaje-estratificado.pdf", title: "Tamizaje estratificado" },
+    { file: "educacion-comunitaria.pdf", title: "Educacion comunitaria" },
+    { file: "erradicacion-hp.pdf", title: "Ruta de erradicacion H. pylori" },
+    { file: "vigilancia-preneoplasias.pdf", title: "Vigilancia preneoplasias" }
+  ],
+  impacto: [
+    { file: "carga-global.pdf", title: "Carga global 2024" },
+    { file: "intervenciones-publicas.pdf", title: "Intervenciones publicas" },
+    { file: "costos-sanitarios.pdf", title: "Naturaleza economica" }
+  ]
+};
+
+// Personaliza la lista de videos por seccion (YouTube o archivos locales)
+var VIDEOS = {
+  anatomia: [
+    { title: "Recorrido endoscopico anatomico", youtubeId: "u1zgFlCw8Aw" },
+    { title: "Histologia funcional del estomago", youtubeId: "yJXTXN4xrI8" }
+  ],
+  factores: [
+    { title: "Prevencion y factores de riesgo", youtubeId: "yJXTXN4xrI8" },
+    { title: "Alimentacion saludable y H. pylori", youtubeId: "yJXTXN4xrI8" },
+    { title: "Consejos para la comunidad", youtubeId: "lTTajzrSkCw" }
+  ],
+  diagnostico: [
+    { title: "Diagnostico endoscopico", youtubeId: "u1zgFlCw8Aw" },
+    { title: "Tecnicas de cromoendoscopia", youtubeId: "u1zgFlCw8Aw" },
+    { title: "Ultrasonido endoscopico", youtubeId: "lTTajzrSkCw" }
+  ],
+  estadificacion: [
+    { title: "TNM explicado", youtubeId: "nuz1YCCvXfQ" },
+    { title: "Planificacion oncoquirurgica", youtubeId: "yJXTXN4xrI8" }
+  ],
+  tratamiento: [
+    { title: "Tratamiento multimodal", youtubeId: "lTTajzrSkCw" },
+    { title: "Cirugia laparoscopica", youtubeId: "lTTajzrSkCw" },
+    { title: "Abordaje nutricional perioperatorio", youtubeId: "yJXTXN4xrI8" }
+  ],
+  prevencion: [
+    { title: "Prevencion primaria", youtubeId: "yJXTXN4xrI8" },
+    { title: "Tamizaje oportuno", youtubeId: "nuz1YCCvXfQ" },
+    { title: "Programas de erradicacion", youtubeId: "A0e9Vn8g5n4" }
+  ],
+  impacto: [
+    { title: "Carga de enfermedad en Latinoamerica", youtubeId: "yJXTXN4xrI8" },
+    { title: "Politicas publicas exitosas", youtubeId: "nuz1YCCvXfQ" }
+  ]
+};
+
+SECTION_KEYS.forEach(function(key){
+  var meta = SECTION_META[key];
+  if(!DATA["inf_"+key]){
+    DATA["inf_"+key] = {
+      titulo: "Infografias - " + meta.label,
+      html:
+        '<div class="cards"><div class="card full"><p class="lead">Descarga los PDF disponibles para ' + meta.label + '.</p></div></div>' +
+        '<div id="infogramasGrid" class="cards cols-3"></div>'
+    };
+  }
+  if(!DATA["vid_"+key]){
+    DATA["vid_"+key] = {
+      titulo: "Videos - " + meta.label,
+      html:
+        '<div class="cards"><div class="card full"><p class="lead">Visualiza los videos seleccionados para ' + meta.label + '.</p></div></div>' +
+        '<div id="videosGrid" class="cards cols-2"></div>'
+    };
+  }
+});
+
 var NAV = [
-  ["inicio","Inicio","i-home"],
-  ["anatomia","Cancer Gastrico","i-scope"],
-  ["factores","Infografias","i-risk"],
-  ["diagnostico","Videos","i-scope"],
-  // ["tratamiento","Tratamiento","i-therapy"],
-  // ["prevencion","Prevención","i-prevent"],
-  ["tesis"," documentos","i-books"]
-
-];
-var SIDE = [
-  ["inicio","Página principal","i-home"],
-  ["anatomia","Anatomía y fisiología","i-scope"],
-  ["factores","Factores de riesgo","i-risk"],
-  ["diagnostico","Métodos diagnósticos","i-scope"],
-  ["estadificacion","Estadificación","i-scope"],
-  ["tratamiento","Tratamientos","i-therapy"],
-  ["prevencion","Prevención","i-prevent"],
-  ["impacto","Impacto en salud pública","i-books"],
-  ["casos","Casos clínicos","i-books"],
-  ["tesis","Tesis","i-books"],
-
-  ["galeria","Galería multimedia","i-play"],
-  ["quiz","Quiz de repaso","i-quiz"]
+  { id: "inicio", label: "Inicio", icon: "i-home", default: "inicio" },
+  { id: "cg", label: "Cancer gastrico", icon: "i-scope", default: "anatomia" },
+  { id: "inf", label: "Infografias", icon: "i-risk", default: "inf_anatomia" },
+  { id: "vid", label: "Videos", icon: "i-play", default: "vid_anatomia" },
+  { id: "docs", label: "Documentos", icon: "i-books", default: "tesis" }
 ];
 
+var SIDE_SETS = {
+  inicio: [],
+  cg: SECTION_KEYS.map(function(key){
+    var meta = SECTION_META[key];
+    return { goto: key, label: meta.label, icon: meta.icon };
+  }),
+  inf: SECTION_KEYS.map(function(key){
+    var meta = SECTION_META[key];
+    return { goto: "inf_"+key, label: meta.label, icon: meta.icon };
+  }),
+  vid: SECTION_KEYS.map(function(key){
+    var meta = SECTION_META[key];
+    return { goto: "vid_"+key, label: meta.label, icon: meta.icon };
+  }),
+  docs: [
+    { goto: "tesis", label: "Tesis", icon: "i-books" },
+    { goto: "casos", label: "Casos clinicos", icon: "i-books" },
+    { goto: "quiz", label: "Quiz de repaso", icon: "i-quiz" }
+  ]
+};
 
+var CURRENT_GROUP = "";
+var CURRENT_SECTION = "";
 
-
-
-function byId(id){return document.getElementById(id);}
+function byId(id){ return document.getElementById(id); }
 
 function buildNav(){
-  var nav = byId("nav"), i, a, icon;
-  for(i=0;i<NAV.length;i++){
-    a=document.createElement("a");
-    a.href="#";
-    a.className="tab"+(i===0?" active":"");
-    a.setAttribute("data-goto", NAV[i][0]);
-    icon = '<svg class="ico"><use xlink:href="#'+NAV[i][2]+'"/></svg>';
-    a.innerHTML= icon + NAV[i][1];
+  var nav = byId("nav");
+  if(!nav) return;
+  nav.innerHTML = "";
+  NAV.forEach(function(item, idx){
+    var a = document.createElement("a");
+    a.href = "#";
+    a.className = "tab" + (idx===0 ? " active" : "");
+    a.setAttribute("data-goto", item.default);
+    a.setAttribute("data-group", item.id);
+    var icon = '<svg class="ico"><use xlink:href="#'+item.icon+'"/></svg>';
+    a.innerHTML = icon + item.label;
     nav.appendChild(a);
-  }
-}
-function buildSide(){
-  var s = byId("side"), i, html="", icon;
-  for(i=0;i<SIDE.length;i++){
-    icon = '<svg class="ico"><use xlink:href="#'+SIDE[i][2]+'"/></svg>';
-    html += '<a href="#" data-goto="'+SIDE[i][0]+'">'+icon+SIDE[i][1]+'</a>';
-  }
-  s.innerHTML = html;
+  });
 }
 
-function markActive(k){
-  var els = document.querySelectorAll("[data-goto]"), i, c;
-  for(i=0;i<els.length;i++){
-    c = els[i].className.replace(" active","");
-    if(els[i].getAttribute("data-goto")==k){ c += " active"; }
-    els[i].className = c;
+function buildSide(group){
+  var menu = byId("side");
+  if(!menu) return;
+  var wrap = menu.parentElement;
+  var items = SIDE_SETS[group] || [];
+  if(!items.length){
+    menu.innerHTML = "";
+    if(wrap) wrap.style.display = "none";
+    return;
+  }
+  if(wrap) wrap.style.display = "";
+  var html = "";
+  items.forEach(function(item){
+    var icon = '<svg class="ico"><use xlink:href="#'+item.icon+'"/></svg>';
+    html += '<a href="#" data-goto="'+item.goto+'">'+icon+item.label+'</a>';
+  });
+  menu.innerHTML = html;
+}
+
+function resolveGroup(sectionKey){
+  if(sectionKey === "inicio"){ return "inicio"; }
+  if(sectionKey === "tesis" || sectionKey === "casos" || sectionKey === "quiz"){ return "docs"; }
+  if(/^inf_/.test(sectionKey)){ return "inf"; }
+  if(/^vid_/.test(sectionKey)){ return "vid"; }
+  return "cg";
+}
+
+function markActive(sectionKey){
+  var group = resolveGroup(sectionKey);
+  CURRENT_GROUP = group;
+  CURRENT_SECTION = sectionKey;
+
+  var navItems = document.querySelectorAll("#nav [data-group]");
+  for(var i=0;i<navItems.length;i++){
+    var el = navItems[i];
+    var cls = el.className.replace(" active","");
+    if(el.getAttribute("data-group") === group){ cls += " active"; }
+    el.className = cls;
+  }
+
+  var sideItems = document.querySelectorAll("#side [data-goto]");
+  for(var j=0;j<sideItems.length;j++){
+    var elSide = sideItems[j];
+    var clsSide = elSide.className.replace(" active","");
+    if(elSide.getAttribute("data-goto") === sectionKey){ clsSide += " active"; }
+    elSide.className = clsSide;
   }
 }
+
+function renderInfogramas(sectionKey){
+  var grid = byId("infogramasGrid");
+  if(!grid) return;
+  var base = sectionKey.replace(/^inf_/, "");
+  var files = INFOGRAMAS[base] || [];
+  var cards = [];
+  files.forEach(function(entry){
+    var file = typeof entry === "string" ? entry : entry.file;
+    if(!file) return;
+    var title = typeof entry === "string" ? entry : (entry.title || file);
+    var href = "./assets/infogramas/" + encodeURIComponent(file);
+    cards.push(
+      '<div class="card equal">'
+        + '<div class="pdf-thumb"><img src="'+PDF_ICON+'" alt="PDF"></div>'
+        + '<h4>'+escapeHtml(title)+'</h4>'
+        + '<div class="btn-row">'
+        +   '<a class="btn primary" href="'+href+'" target="_blank" rel="noopener">Abrir</a>'
+        +   '<a class="btn" href="'+href+'" download>Descargar</a>'
+        + '</div>'
+      + '</div>'
+    );
+  });
+  var desiredSlots = Math.max(cards.length, 8);
+  for(var i = cards.length; i < desiredSlots; i++){
+    cards.push(
+      '<div class="card equal placeholder">'
+        + '<div class="placeholder-bubble">+</div>'
+        + '<p>Agrega tu infograma</p>'
+        + '<span class="placeholder-hint">Coloca aqu� un PDF en assets/infogramas.</span>'
+      + '</div>'
+    );
+  }
+  grid.innerHTML = cards.join("");
+}
+
+function renderVideos(sectionKey){
+  var grid = byId("videosGrid");
+  if(!grid) return;
+  var base = sectionKey.replace(/^vid_/, "");
+  var list = VIDEOS[base] || [];
+  var cards = [];
+  list.forEach(function(entry){
+    if(entry && entry.youtubeId){
+      cards.push(
+        '<div class="card equal">'
+          + '<div class="video"><iframe src="https://www.youtube.com/embed/'+entry.youtubeId+'" title="'+escapeHtml(entry.title || "Video")+'" allowfullscreen></iframe></div>'
+          + '<h4>'+escapeHtml(entry.title || "Video")+'</h4>'
+        + '</div>'
+      );
+      return;
+    }
+    if(entry && entry.url){
+      cards.push(
+        '<div class="card equal">'
+          + '<video controls src="'+entry.url+'" style="width:100%;height:auto;border-radius:14px;box-shadow:0 16px 30px rgba(15,23,42,.18)"></video>'
+          + '<h4>'+escapeHtml(entry.title || "Video")+'</h4>'
+        + '</div>'
+      );
+      return;
+    }
+  });
+  var desiredSlots = Math.max(cards.length, 8);
+  for(var j = cards.length; j < desiredSlots; j++){
+    cards.push(
+      '<div class="card equal placeholder">'
+        + '<div class="placeholder-bubble">&#9658;</div>'
+        + '<p>Agrega tu video</p>'
+        + '<span class="placeholder-hint">Incluye un ID de YouTube o un archivo local.</span>'
+      + '</div>'
+    );
+  }
+  grid.innerHTML = cards.join("");
+}
+
+/* ====== RENDER / NAV / SIDE ====== */
 function initTratamiento(){
   var cFLOT = document.getElementById('chartFLOT');
   var cOS   = document.getElementById('chartTrialsOS');
@@ -1695,30 +1889,46 @@ function initTratamiento(){
 }
 
 function render(key){
-  var d = DATA[key] || DATA.inicio;
-  byId("title").textContent = d.titulo || (key || "Inicio");
-  byId("content").innerHTML = d.html || "";
-  // mostrar/ocultar bloque multimedia solo en 'galeria'
+  var target = DATA[key] ? key : "inicio";
+  var group = resolveGroup(target);
+  if(group !== CURRENT_GROUP){
+    buildSide(group);
+  }
+
+  var section = DATA[target] || DATA.inicio;
+  byId("title").textContent = section.titulo || (target || "Inicio");
+  byId("content").innerHTML = section.html || "";
+
   var m = byId("multimedia");
-  if(m) m.style.display = (key==="galeria") ? "block" : "none";
-  if(key==="tratamiento"){ initTratamiento(); }
-  if(key==="prevencion"){ initPrevencion(); }
-    if(key==="impacto"){ initImpacto(); }
-if(key==="tesis"){ initTesis(); }
+  if(m) m.style.display = "none";
 
+  if(target==="tratamiento"){ initTratamiento(); }
+  if(target==="prevencion"){ initPrevencion(); }
+  if(target==="impacto"){ initImpacto(); }
+  if(target==="tesis"){ initTesis(); }
+  if(group==="inf"){ renderInfogramas(target); }
+  if(group==="vid"){ renderVideos(target); }
 
+  var contentNode = byId("content");
+  if(contentNode){
+    var links = contentNode.querySelectorAll("[data-goto]");
+    for(var i=0;i<links.length;i++){
+      links[i].onclick = function(e){
+        e.preventDefault();
+        render(this.getAttribute("data-goto"));
+      };
+    }
+    var pdfLinks = contentNode.querySelectorAll("[data-pdf]");
+    for(var j=0;j<pdfLinks.length;j++){
+      pdfLinks[j].onclick = function(){
+        downloadPdf(this.getAttribute("data-pdf"));
+      };
+    }
+  }
 
-  // hooks internos
-  var i, list;
-  list = byId("content").querySelectorAll("[data-goto]");
-  for(i=0;i<list.length;i++){ list[i].onclick=function(e){ e.preventDefault(); render(this.getAttribute("data-goto")); markActive(this.getAttribute("data-goto")); }; }
-  list = byId("content").querySelectorAll("[data-pdf]");
-  for(i=0;i<list.length;i++){ list[i].onclick=function(){ downloadPdf(this.getAttribute("data-pdf")); }; }
-  // quiz
-  if(key==="quiz"){ buildQuiz(); }
-  // dashboard
-  if(key==="estadificacion"){ initDashboard(); }
-  markActive(key);
+  if(target==="quiz"){ buildQuiz(); }
+  if(target==="estadificacion"){ initDashboard(); }
+  markActive(target);
 }
 
 function globalHooks(){
@@ -2255,8 +2465,10 @@ function exportCSV(labels, data, filename){
 
 /* ====== INIT ====== */
 document.addEventListener('DOMContentLoaded', function(){
-  buildNav(); buildSide(); globalHooks(); render("inicio");
-  initCarousel('carHero', 3800);
+  buildNav();
+  globalHooks();
+  render("inicio");
+  initCarousel('carHero', 5200);
   initCarousel('carCampus', 4200);
 });
 
@@ -2509,3 +2721,7 @@ function ensureSweetAlert(cb){
   l.href = 'https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css';
   document.head.appendChild(l);
 }
+
+
+
+

@@ -1,10 +1,10 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Portal Cáncer Gástrico</title>
+<title>Portal CÃ¡ncer GÃ¡strico</title>
 <link rel="stylesheet" href="assets/css/styles.css">
 <link rel="stylesheet" href="assets/css/justificado.css">
 <link rel="stylesheet" href="assets/css/ui-kit.css">
@@ -39,61 +39,58 @@
 </header>
 
 <!-- ====== HERO ====== -->
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-copy">
-      <h1>Cáncer Gástrico</h1>
-    </div>
-
-    <div class="hero-media">
-      <div class="carousel" id="carHero">
-        <div class="slides">
-          
-          <div class="slide active">
-            <img src="./assets/img/tc_posicionamiento-1600(1).jpg" 
-                 alt="TC: posicionamiento del paciente"
-                 loading="eager">
-          </div>
-
-          <div class="slide">
-            <img src="./assets/img/tc_posicionamiento-1600(1).jpg" 
-                 alt="Imagen 2"
-                 loading="lazy">
-          </div>
-
-          <div class="slide">
-            <img src="./assets/img/tc_posicionamiento-1600(1).jpg" 
-                 alt="Imagen 3"
-                 loading="lazy">
-          </div>
-
-        </div>
-        <button class="c-prev" aria-label="Anterior">‹</button>
-        <button class="c-next" aria-label="Siguiente">›</button>
-        <div class="c-dots"></div>
+<section class="hero hero--carousel">
+  <div class="carousel" id="carHero">
+    <div class="slides">
+      
+      <div class="slide active slide--fit" style="--shift-x:60%;">
+        <img src="./assets/img/tc_posicionamiento-1600.jpg" 
+             alt="Tecn&oacute;loga posicionando a un paciente para tomograf&iacute;a"
+             loading="eager">
       </div>
+
+      <div class="slide">
+       <img src="./assets/img/tc_posicionamiento-1600.jpg" 
+             alt="Endoscopia digestiva alta en sala especializada"
+             loading="lazy">
+      </div>
+
+      <div class="slide">
+       <img src="./assets/img/tc_posicionamiento-1600.jpg" 
+             alt="Micrograf&iacute;a de Helicobacter pylori"
+             loading="lazy">
+      </div>
+
+      <div class="slide">
+        <img src="./assets/img/tc_posicionamiento-1600.jpg" 
+             alt="Alimentaci&oacute;n saludable como prevenci&oacute;n"
+             loading="lazy">
+      </div>
+
     </div>
+    <button class="c-prev" aria-label="Anterior">&lsaquo;</button>
+    <button class="c-next" aria-label="Siguiente">&rsaquo;</button>
+    <div class="c-dots"></div>
   </div>
 </section>
 
 
 
 
-
 <main class="wrap">
-  <aside class="panel side"><h3>Índice</h3><div id="side" class="menu"></div></aside>
+  <aside class="panel side"><h3>Ãndice</h3><div id="side" class="menu"></div></aside>
   <section class="panel main">
     <h2 id="title" style="margin:0 0 8px">Inicio</h2>
     <div id="content"></div>
 
-    <!-- ====== Bloque multimedia (visible en sección “Galería”) ====== -->
+    <!-- ====== Bloque multimedia (visible en secciÃ³n â€œGalerÃ­aâ€) ====== -->
     <div id="multimedia" style="display:none; margin-top:12px">
       <div class="cards">
         <div class="card full">
           <h3><svg class="ico"><use xlink:href="#i-play"/></svg> Videos destacados</h3>
           <div class="video-grid">
-            <div class="video"><iframe src="https://www.youtube.com/embed/yJXTXN4xrI8" title="Prevención y factores de riesgo" allowfullscreen></iframe></div>
-            <div class="video"><iframe src="https://www.youtube.com/embed/u1zgFlCw8Aw" title="Diagnóstico endoscópico" allowfullscreen></iframe></div>
+            <div class="video"><iframe src="https://www.youtube.com/embed/yJXTXN4xrI8" title="PrevenciÃ³n y factores de riesgo" allowfullscreen></iframe></div>
+            <div class="video"><iframe src="https://www.youtube.com/embed/u1zgFlCw8Aw" title="DiagnÃ³stico endoscÃ³pico" allowfullscreen></iframe></div>
             <div class="video"><iframe src="https://www.youtube.com/embed/lTTajzrSkCw" title="Tratamiento multimodal" allowfullscreen></iframe></div>
           </div>
         </div>
@@ -104,15 +101,20 @@
 </main>
 
 <div class="footer">
-  © Universidad Mariana — Portal Cáncer Gástrico.<br>
-  <strong>Tecnología en Radiodiagnóstico y Radioterapia</strong><br>
+  Â© Universidad Mariana â€” Portal CÃ¡ncer GÃ¡strico.<br>
+  <strong>TecnologÃ­a en RadiodiagnÃ³stico y Radioterapia</strong><br>
   Integrantes: Reichel Otero Cadena, Elizabeth Benavides, Jhon Pantoja.
 </div>
-<!-- === Librería de gráficos === -->
+<!-- === LibrerÃ­a de grÃ¡ficos === -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 
 <script src="assets/js/legacy/app-legacy.js" defer></script>
 
 <script type="module" src="assets/js/main.js"></script>
+<script src="assets/js/intro.js"></script>
 </body>
 </html>
+
+
+
+
