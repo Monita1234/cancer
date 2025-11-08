@@ -1583,6 +1583,7 @@ var INFOGRAMAS = {
 // Personaliza la lista de videos por seccion (YouTube o archivos locales)
 var VIDEOS = {
   anatomia: [
+    { title: "Anatomía del estómago", url: "./assets/videos/anatomia/Anatomía del Estómago-VEED.mp4" },
     { title: "Recorrido endoscopico anatomico", youtubeId: "u1zgFlCw8Aw" },
     { title: "Histologia funcional del estomago", youtubeId: "yJXTXN4xrI8" }
   ],
