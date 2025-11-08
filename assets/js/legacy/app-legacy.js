@@ -1519,41 +1519,61 @@ var SECTION_KEYS = Object.keys(SECTION_META);
 // Personaliza la lista de PDF por seccion (archivos dentro de assets/infogramas)
 var INFOGRAMAS = {
   anatomia: [
+    { path: "./assets/infogramas/anatomiaa/Infografia1.pdf", title: "Anatomia - Infografia 1" },
+    { path: "./assets/infogramas/anatomiaa/Infografia2.pdf", title: "Anatomia - Infografia 2" },
+    { path: "./assets/infogramas/anatomiaa/Infografia3.pdf", title: "Anatomia - Infografia 3" },
+    { path: "./assets/infogramas/anatomiaa/infograma4.pdf", title: "Anatomia - Infografia 4" },
+    { path: "./assets/infogramas/anatomiaa/Infograma5.pdf", title: "Anatomia - Infografia 5" },
     { file: "atlas-macroscopico.pdf", title: "Atlas macroscopico" },
     { file: "histologia-fundica.pdf", title: "Histologia fundica" },
     { file: "vascularizacion-gastrica.pdf", title: "Vascularizacion gastrica" },
     { file: "motilidad-gastrica.pdf", title: "Ciclos de motilidad" }
   ],
   factores: [
+    { path: "./assets/infogramas/factores/factor1.pdf", title: "Factores - Infografia 1" },
+    { path: "./assets/infogramas/factores/factor2.pdf", title: "Factores - Infografia 2" },
+    { path: "./assets/infogramas/factores/factor3.pdf", title: "Factores - Infografia 3" },
     { file: "factores-modificables.pdf", title: "Factores modificables" },
     { file: "factores-no-modificables.pdf", title: "Factores no modificables" },
     { file: "h-pylori-riesgo.pdf", title: "H. pylori y riesgo" },
     { file: "dieta-saludable.pdf", title: "Recomendaciones dietarias" }
   ],
   diagnostico: [
+    { path: "./assets/infogramas/diagnostico/diagnostico1.pdf", title: "Diagnostico - Infografia 1" },
+    { path: "./assets/infogramas/diagnostico/diagnostico2.pdf", title: "Diagnostico - Infografia 2" },
+    { path: "./assets/infogramas/diagnostico/diagnostico3.pdf", title: "Diagnostico - Infografia 3" },
     { file: "endoscopia-calidad.pdf", title: "Checklist EDA" },
     { file: "clasificacion-paris.pdf", title: "Clasificacion de Paris" },
     { file: "biopsias-sydney.pdf", title: "Protocolo Sydney" },
     { file: "estadificacion-imagen.pdf", title: "Ruta imagenologica" }
   ],
   estadificacion: [
+    { path: "./assets/infogramas/estadificacion/estadificacion1.pdf", title: "Estadificacion - Infografia 1" },
+    { path: "./assets/infogramas/estadificacion/estadificacion2.pdf", title: "Estadificacion - Infografia 2" },
     { file: "tnm-gastrico.pdf", title: "Resumen TNM 8a ed." },
     { file: "estaciones-ganglionares.pdf", title: "Estaciones ganglionares" },
     { file: "algoritmo-estadificacion.pdf", title: "Algoritmo de estadificacion" }
   ],
   tratamiento: [
+    { path: "./assets/infogramas/tratamiento/tratamiento1.pdf", title: "Tratamiento - Infografia 1" },
+    { path: "./assets/infogramas/tratamiento/tratamiento2.pdf", title: "Tratamiento - Infografia 2" },
+    { path: "./assets/infogramas/tratamiento/tratamiento3.pdf", title: "Tratamiento - Infografia 3" },
     { file: "algoritmo-terapeutico.pdf", title: "Algoritmo terapeutico" },
     { file: "esquemas-perioperatorios.pdf", title: "Esquemas perioperatorios" },
     { file: "criterios-esd.pdf", title: "Criterios para ESD" },
     { file: "cuidados-nutricionales.pdf", title: "Soporte nutricional" }
   ],
   prevencion: [
+    { path: "./assets/infogramas/prevencion/prevencion1.pdf", title: "Prevencion - Infografia 1" },
+    { path: "./assets/infogramas/prevencion/prevencion2.pdf", title: "Prevencion - Infografia 2" },
+    { path: "./assets/infogramas/prevencion/prevencion3.pdf", title: "Prevencion - Infografia 3" },
     { file: "tamizaje-estratificado.pdf", title: "Tamizaje estratificado" },
     { file: "educacion-comunitaria.pdf", title: "Educacion comunitaria" },
     { file: "erradicacion-hp.pdf", title: "Ruta de erradicacion H. pylori" },
     { file: "vigilancia-preneoplasias.pdf", title: "Vigilancia preneoplasias" }
   ],
   impacto: [
+    { path: "./assets/infogramas/saludpublica/saludpublica1.pdf", title: "Salud publica - Infografia 1" },
     { file: "carga-global.pdf", title: "Carga global 2024" },
     { file: "intervenciones-publicas.pdf", title: "Intervenciones publicas" },
     { file: "costos-sanitarios.pdf", title: "Naturaleza economica" }
@@ -1723,9 +1743,20 @@ function renderInfogramas(sectionKey){
   var cards = [];
   files.forEach(function(entry){
     var file = typeof entry === "string" ? entry : entry.file;
-    if(!file) return;
-    var title = typeof entry === "string" ? entry : (entry.title || file);
-    var href = "./assets/infogramas/" + encodeURIComponent(file);
+    var customPath = entry && entry.path;
+    var folder = entry && entry.folder;
+    if(!file && !customPath) return;
+    var fallbackName = file || (customPath ? customPath.split("/").pop() : "Infografia");
+    var title = typeof entry === "string" ? entry : (entry.title || fallbackName);
+    var href = customPath;
+    if(!href){
+      var rel = file ? encodeURIComponent(file) : "";
+      if(folder){
+        var cleanFolder = String(folder).replace(/^\.?\/*/, "").replace(/\/*$/, "");
+        rel = cleanFolder ? cleanFolder + "/" + rel : rel;
+      }
+      href = "./assets/infogramas/" + rel;
+    }
     cards.push(
       '<div class="card equal">'
         + '<div class="pdf-thumb"><img src="'+PDF_ICON+'" alt="PDF"></div>'
@@ -1743,7 +1774,7 @@ function renderInfogramas(sectionKey){
       '<div class="card equal placeholder">'
         + '<div class="placeholder-bubble">+</div>'
         + '<p>Agrega tu infograma</p>'
-        + '<span class="placeholder-hint">Coloca aqu� un PDF en assets/infogramas.</span>'
+        + '<span class="placeholder-hint">Coloca aqui un PDF en assets/infogramas.</span>'
       + '</div>'
     );
   }
@@ -2721,6 +2752,7 @@ function ensureSweetAlert(cb){
   l.href = 'https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css';
   document.head.appendChild(l);
 }
+
 
 
 
