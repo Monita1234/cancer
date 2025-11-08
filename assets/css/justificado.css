@@ -1,6 +1,17 @@
-/* ====== JUSTIFICACIÃ“N DE TEXTO - VERSIÃ“N REFORZADA ====== */
+/* ====== JUSTIFICACIÓN DE TEXTO (global pero seguro) ====== */
 
-/* Justificar SIEMPRE en Ã¡reas de contenido principal */
+/* Contenedores de contenido: heredan justificado por defecto */
+.panel.main,
+#content,
+.card{
+  text-align: justify !important;
+  text-align-last: left !important;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+/* Justificar SIEMPRE en áreas de contenido principal */
 main p,
 main li,
 main dd,
@@ -45,14 +56,20 @@ main figcaption,
   line-height: 1.75;
 }
 
-/* Listas especÃ­ficas */
+/* Cortes seguros para palabras largas en móviles */
+.panel.main p,
+.panel.main li,
+#content p,
+#content li{ overflow-wrap: anywhere; word-break: normal; }
+
+/* Listas específicas */
 ul li,
 ol li,
 .list-compact li {
   text-align: justify !important;
 }
 
-/* TÃ­tulos con balance (NO justificados) */
+/* Títulos con balance (NO justificados) */
 h1, h2, h3, h4, h5, h6,
 .card h3,
 #title {

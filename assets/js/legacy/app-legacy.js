@@ -961,7 +961,7 @@ estadificacion: {
     + '<div class="cards"><div class="card full">'
     +   '<h3>2.4 Agrupación por estadios y correlación pronóstica</h3>'
     +   '<p>Existe una relación directa entre el estadio y la <b>supervivencia a 5 años</b>; por ello, la precisión en cTNM/ypTNM/pTNM impacta decisiones y expectativas (Arias).</p>'
-    +   '<div style="overflow:auto">'
+    +   '<div class="tbl-wrap">'
     +   '<table class="tbl" style="min-width:860px">'
     +     '<thead>'
     +       '<tr>'
@@ -1053,7 +1053,7 @@ estadificacion: {
     + '</div>'
 
     + '<div class="cards"><div class="card full">'
-    +   '<div style="overflow:auto">'
+    +   '<div class="tbl-wrap">'
     +   '<table class="tbl" style="min-width:820px">'
     +     '<thead>'
     +       '<tr><th>Modalidad</th><th>Rol principal</th><th>Precisión/ Sensibilidad</th><th>Limitaciones</th></tr>'
@@ -1735,6 +1735,19 @@ function markActive(sectionKey){
   }
 }
 
+function enhanceTables(root){
+  if(!root){ return; }
+  var tables = root.querySelectorAll("table");
+  for(var i=0;i<tables.length;i++){
+    var tbl = tables[i];
+    if(tbl.closest(".tbl-wrap")){ continue; }
+    var wrap = document.createElement("div");
+    wrap.className = "tbl-wrap";
+    tbl.parentNode.insertBefore(wrap, tbl);
+    wrap.appendChild(tbl);
+  }
+}
+
 function renderInfogramas(sectionKey){
   var grid = byId("infogramasGrid");
   if(!grid) return;
@@ -1955,6 +1968,7 @@ function render(key){
         downloadPdf(this.getAttribute("data-pdf"));
       };
     }
+    enhanceTables(contentNode);
   }
 
   if(target==="quiz"){ buildQuiz(); }
