@@ -22,7 +22,7 @@ import { mountCarousel }   from "./views/carousel.js";
 import { mountTesis }      from "./views/tesis.js";
 
 function renderChrome() {
-  const active = location.hash.replace("#/", "") || "dashboard";
+  const active = location.hash.replace("#/", "") || "inicio";
   const navEl = byId("nav") || document.body.appendChild(Object.assign(document.createElement("div"), { id: "nav" }));
   const sideEl = byId("side") || document.body.appendChild(Object.assign(document.createElement("div"), { id: "side" }));
   renderNav(navEl, NAV, active);
@@ -36,4 +36,7 @@ register("tratamiento",() => { renderChrome(); mountTratamiento(); });
 register("carousel",   () => { renderChrome(); mountCarousel();   });
 register("tesis",      () => { renderChrome(); mountTesis();      });
 
-startRouter();
+// Solo iniciar el SPA si se solicita con ?spa=1
+if (new URLSearchParams(location.search).get("spa") === "1") {
+  startRouter();
+}
